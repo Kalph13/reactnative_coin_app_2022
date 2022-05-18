@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "50409616005",
+    "project_id": "reactnative-coin-app-2022",
+    "storage_bucket": "reactnative-coin-app-2022.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:50409616005:android:a868bebf6ddb8214ddefec",
+        "android_client_info": {
+          "package_name": "com.reactnativecoinapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "50409616005-n5pn65jb3tgsa23m45u5a6plifemk153.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.reactnativecoinapp",
+            "certificate_hash": "966ff425278c5672fac6b30e69689530bf4a7314"
+          }
+        },
+        {
+          "client_id": "50409616005-q8ef92ba8uardu1iev6veg5saqej51br.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAOdpo_TmDtaARXijHl4obVhO5S4dB0PwU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "50409616005-q8ef92ba8uardu1iev6veg5saqej51br.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
