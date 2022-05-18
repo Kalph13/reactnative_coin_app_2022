@@ -1,8 +1,9 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { Animated } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import styled from "styled-components/native";
 
-const Container = styled.View`
+const Container = styled.TouchableOpacity`
     flex: 0.3;
     justify-content: center;    
     align-items: center;
@@ -25,7 +26,8 @@ const CoinIcon = styled.Image`
 
 const AnimatedContainer = Animated.createAnimatedComponent(Container);
 
-const Coin = ({ input }) => {
+const Coin = ({ index, id, symbol }) => {
+    const navigation = useNavigation();
     const opacity = useRef(new Animated.Value(0)).current;
     
     const scale = opacity.interpolate({
@@ -37,17 +39,22 @@ const Coin = ({ input }) => {
         Animated.spring(opacity, {
             toValue: 1,
             useNativeDriver: true,
-            delay: input.index * 100
+            delay: index * 100
         }).start();
     }, []);
 
     return (
-        <AnimatedContainer style={{
-            opacity: opacity,
-            transform: [{scale}]
-        }}>
-            <CoinIcon source={{ uri: `https://coinicons-api.vercel.app/api/icon/${input.item.symbol.toLowerCase()}` }}/>
-            <CoinName>{input.item.symbol}</CoinName>
+        <AnimatedContainer 
+            onPress={
+                () => navigation.navigate("Detail", { id, symbol })
+            }
+            style={{
+                opacity: opacity,
+                transform: [{scale}]
+            }}
+        >
+            <CoinIcon source={{ uri: `https://coinicons-api.vercel.app/api/icon/${symbol.toLowerCase()}` }}/>
+            <CoinName>{symbol}</CoinName>
         </AnimatedContainer>
     );
 };

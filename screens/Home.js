@@ -54,7 +54,7 @@ const Home = () => {
                 numColumns={3}
                 columnWrapperStyle={{ justifyContent: "space-between" }}
                 keyExtractor={item => item.id}
-                renderItem={item => <Coin input={item} />}
+                renderItem={item => <Coin index={item.index} id={item.item.id} symbol={item.item.symbol} />}
                 ItemSeparatorComponent={Separator}
             />
         </Container>
